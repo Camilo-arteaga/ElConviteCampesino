@@ -690,17 +690,79 @@ a {
 /* Responsive - Mobile Hide */
 /* Nota: En una implementacion real full se añadiría menu hamburguesa,
    por ahora optimizamos para que no rompa en desktop/laptop */
+/* --- Hamburger Menu --- */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Responsive - Mobile */
 @media (max-width: 1024px) {
+    .hamburger-btn {
+        display: block;
+    }
+
     .nav-list {
         display: none;
+        /* Oculto por defecto */
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background: var(--color-brand);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        box-shadow: var(--shadow-md);
+        overflow-y: auto;
     }
 
-    /* Ocultar menu complejo en tablet/movil por ahora */
-    .brand h1 {
-        font-size: 1.2rem;
+    .nav-list.active {
+        display: flex;
+        /* Mostrar cuando activo */
     }
 
-    .header-container {
-        justify-content: center;
+    .nav-link {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Grids Stacked */
+    .intro-grid,
+    .location-grid,
+    .footer-grid,
+    .megamenu {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .megamenu {
+        position: static;
+        /* Flujo normal en móvil */
+        width: 100%;
+        transform: none;
+        box-shadow: none;
+        display: none !important;
+        /* Por ahora ocultamos el mega menu complejo en móvil para simplificar, o lo convertimos en acordeón */
+    }
+
+    /* Nota: Para una implementación completa móvil del megamenu se requiere JS acordeón. 
+       Por ahora, permitimos navegación básica. */
+
+    .hero-carousel {
+        height: 50vh;
+        /* Altura dinámica */
+    }
+
+    .carousel-caption h2 {
+        font-size: 2rem;
     }
 }

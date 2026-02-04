@@ -130,3 +130,22 @@ if (nextBtn) {
     // Iniciar
     startSlideTimer();
 }
+
+// --- Hamburger Logic ---
+const hamburgerBtn = document.querySelector('.hamburger-btn');
+const navList = document.querySelector('.nav-list');
+
+if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        // Icon toggle (optional)
+        const icon = hamburgerBtn.querySelector('i');
+        if (navList.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+}
