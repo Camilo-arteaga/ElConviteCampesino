@@ -35,6 +35,13 @@ const submenuMap = {
     '#memorias': '.memorias'
 };
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Asegurar que los submenús estén ocultos al cargar
+    document.querySelectorAll('.quienes-somos, .que-hacemos, .convite-dia, .memorias').forEach(sub => {
+        sub.style.display = 'none';
+    });
+});
+
 document.querySelectorAll('.nav-menu a').forEach(link => {
     const href = link.getAttribute('href');
     const submenuSelector = submenuMap[href];
