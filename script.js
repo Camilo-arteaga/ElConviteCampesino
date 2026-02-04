@@ -1,89 +1,132 @@
-// Funcionalidad del menú hamburguesa
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Cerrar el menú al hacer clic en un enlace
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-
-// Smooth scroll para los enlaces internos
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Funcionalidad de submenús desplegables
-const submenuMap = {
-    '#quienes-somos': '.quienes-somos',
-    '#que-hacemos': '.que-hacemos',
-    '#convite-dia': '.convite-dia',
-    '#memorias': '.memorias'
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Asegurar que los submenús estén ocultos al cargar
-    document.querySelectorAll('.quienes-somos, .que-hacemos, .convite-dia, .memorias').forEach(sub => {
-        sub.style.display = 'none';
-    });
-});
+    const navItems = document.querySelectorAll('.nav-link[data-target]');
+    const megamenus = document.querySelectorAll('.megamenu');
+    const header = document.querySelector('.main-header');
+    let activeMenu = null;
 
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    const href = link.getAttribute('href');
-    const submenuSelector = submenuMap[href];
-    if (submenuSelector) {
-        const submenu = document.querySelector(submenuSelector);
-        const li = link.parentElement;
-        li.appendChild(submenu);
-        let hideTimeout;
-
-        const showSubmenu = () => {
-            clearTimeout(hideTimeout);
-            submenu.style.display = 'flex';
-        };
-
-        const hideSubmenu = () => {
-            hideTimeout = setTimeout(() => {
-                submenu.style.display = 'none';
-            }, 200); // Retraso para permitir mover el mouse
-        };
-
-        const toggleSubmenu = () => {
-            if (submenu.style.display === 'flex') {
-                submenu.style.display = 'none';
-            } else {
-                // Ocultar otros submenús
-                Object.values(submenuMap).forEach(sel => {
-                    const otherSub = document.querySelector(sel);
-                    if (otherSub !== submenu) {
-                        otherSub.style.display = 'none';
-                    }
-                });
-                submenu.style.display = 'flex';
-            }
-        };
-
-        link.addEventListener('mouseenter', showSubmenu);
-        link.addEventListener('mouseleave', hideSubmenu);
-        submenu.addEventListener('mouseenter', showSubmenu);
-        submenu.addEventListener('mouseleave', hideSubmenu);
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevenir el scroll si es necesario, pero como es toggle, quizás no
-            toggleSubmenu();
-        });
+    // Función para cerrar todos los menús
+    function closeAllMenus() {
+        megamenus.forEach(menu => menu.classList.remove('active'));
+        navItems.forEach(item => item.classList.remove('active'));
+        activeMenu = null;
     }
+
+    // Event Delegation para el header
+    // Usamos mouseenter/mouseleave para experiencia de escritorio suave
+
+    // --- Logic with Delay (Grace Period) ---
+    let closeTimeout;
+
+    function scheduleClose() {
+        closeTimeout = setTimeout(() => {
+            closeAllMenus();
+        }, 300); // 300ms de gracia
+    }
+
+    function cancelClose() {
+        if (closeTimeout) {
+            clearTimeout(closeTimeout);
+            closeTimeout = null;
+        }
+    }
+
+    navItems.forEach(item => {
+        const targetId = item.getAttribute('data-target');
+        const targetMenu = document.getElementById(targetId);
+
+        if (!targetMenu) return;
+
+        // Mostrar al pasar el mouse
+        item.addEventListener('mouseenter', () => {
+            cancelClose();
+            closeAllMenus(); // Cerrar otros instantáneamente si cambiamos de ítem
+            targetMenu.classList.add('active');
+            item.classList.add('active');
+            activeMenu = targetMenu;
+        });
+
+        item.addEventListener('mouseleave', () => {
+            scheduleClose();
+        });
+
+        // Mantener abierto si estamos sobre el menú
+        targetMenu.addEventListener('mouseenter', () => {
+            cancelClose();
+        });
+
+        targetMenu.addEventListener('mouseleave', () => {
+            scheduleClose();
+        });
+    });
+
+    // Seguridad: Cerrar si salimos del header
+    header.addEventListener('mouseleave', () => {
+        scheduleClose();
+    });
+    header.addEventListener('mouseenter', () => {
+        cancelClose();
+    });
+
 });
+
+// --- Carousel Logic ---
+const slides = document.querySelectorAll('.carousel-slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const indicators = document.querySelectorAll('.indicator');
+let currentSlide = 0;
+let slideInterval;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(ind => ind.classList.remove('active'));
+
+    // Loop logic
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+function startSlideTimer() {
+    stopSlideTimer(); // Prevenir múltiples intervalos
+    slideInterval = setInterval(nextSlide, 5000); /* 5 segundos */
+}
+
+function stopSlideTimer() {
+    clearInterval(slideInterval);
+}
+
+// Event Listeners
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startSlideTimer(); // Reiniciar timer al interactuar
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        startSlideTimer();
+    });
+
+    // Indicators
+    indicators.forEach((ind, i) => {
+        ind.addEventListener('click', () => {
+            showSlide(i);
+            startSlideTimer();
+        });
+    });
+
+    // Iniciar
+    startSlideTimer();
+}

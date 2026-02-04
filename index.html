@@ -1,103 +1,340 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Convite Campesino</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
+
 <body>
-    <header>
-            <ul class="nav-menu">
-                <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
-                <li><a href="#que-hacemos">¿Qué hacemos?</a></li>
-                <li><a href="#convite-dia">El convite al día</a></li>
-                <li><a href="#memorias">Memorias</a></li>
-                <li><a href="#geovisor">Geovisor</a></li>
-                <li><a href="#tienda">Tienda</a></li>
-                <li><a href="#contactanos">Contáctanos</a></li>
-                <li><a href="#solidaridad">Solidaridad</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Brand -->
+            <div class="brand">
+                <a href="#" class="brand-link">
+                    <h1>El Convite Campesino</h1>
+                </a>
             </div>
-        </nav>
-            <div class="quienes-somos">
-                <div class="submenu-list">
-                    <a href="#historia">Historia</a>
-                    <a href="#mision">Misión</a>
-                    <a href="#vision">Visión</a>
-                    <a href="#coordinaciones">Coordinaciones</a>
-                    <a href="#asociados">Asociados</a>
+
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <!-- Menu Item -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-target="quienes-somos">¿Quiénes somos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-target="que-hacemos">¿Qué hacemos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-target="convite-dia">El convite al día</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-target="memorias">Memorias</a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Geovisor</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Tienda</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Solidaridad</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Megamenus Container -->
+        <div class="megamenu-wrapper">
+
+            <!-- Megamenu: Quienes Somos -->
+            <div id="quienes-somos" class="megamenu">
+                <div class="megamenu-sidebar">
+                    <ul class="submenu-list">
+                        <li><a href="#">Historia</a></li>
+                        <li><a href="#">Misión</a></li>
+                        <li><a href="#">Visión</a></li>
+                        <li><a href="#">Coordinaciones</a></li>
+                        <li><a href="#">Asociados</a></li>
+                    </ul>
                 </div>
-                <div class="submenu-image">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 1">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 2">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 3">
+                <div class="megamenu-content">
+                    <div class="card-grid">
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1596484552993-9c59500c5c7d?auto=format&fit=crop&w=300&q=80"
+                                alt="Historia"><span>Historia</span></div>
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=300&q=80"
+                                alt="Misión"><span>Misión</span></div>
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=300&q=80"
+                                alt="Equipo"><span>Equipo</span></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="que-hacemos">
-                <div class="submenu-list">
-                    <a href="#proyectos-curso">Proyectos en curso</a>
-                    <a href="#proyectos-desarrollados">Proyectos desarrollados</a>
-                    <a href="#objetos-accion">Objetos de acción</a>
+            <!-- Megamenu: Que Hacemos -->
+            <div id="que-hacemos" class="megamenu">
+                <div class="megamenu-sidebar">
+                    <ul class="submenu-list">
+                        <li><a href="#">Proyectos en curso</a></li>
+                        <li><a href="#">Proyectos desarrollados</a></li>
+                        <li><a href="#">Objetos de acción</a></li>
+                    </ul>
                 </div>
-                <div class="submenu-image">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 1">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 2">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 3">
-                </div>
-            </div>
-            
-            <div class="convite-dia">
-                <div class="submenu-list">
-                    <a href="#noticias">Noticias</a>
-                    <a href="#eventos">Eventos</a>
-                    <a href="#blog">Blog</a>
-                </div>
-                <div class="submenu-image">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 1">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 2">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 3">
+                <div class="megamenu-content">
+                    <div class="card-grid">
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=300&q=80"
+                                alt="Proyectos"><span>Proyectos</span></div>
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&w=300&q=80"
+                                alt="Campo"><span>Acción</span></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="memorias">
-                <div class="submenu-list">
-                    <a href="#publicaciones">Publicaciones</a>
-                    <a href="#audiovisuales">Audivisuales</a>
-                    <a href="#podcasts">Podcasts</a>
+            <!-- Megamenu: El Convite -->
+            <div id="convite-dia" class="megamenu">
+                <div class="megamenu-sidebar">
+                    <ul class="submenu-list">
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
                 </div>
-                <div class="submenu-image">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 1">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 2">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d4a843'/><text x='50' y='50' text-anchor='middle' dy='.3em' fill='%232c3e2d' font-size='12'>Imagen</text></svg>" alt="Imagen 3">
+                <div class="megamenu-content">
+                    <div class="card-grid">
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=300&q=80"
+                                alt="Noticias"><span>Noticias</span></div>
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=300&q=80"
+                                alt="Eventos"><span>Eventos</span></div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Megamenu: Memorias -->
+            <div id="memorias" class="megamenu">
+                <div class="megamenu-sidebar">
+                    <ul class="submenu-list">
+                        <li><a href="#">Publicaciones</a></li>
+                        <li><a href="#">Audiovisuales</a></li>
+                        <li><a href="#">Podcasts</a></li>
+                    </ul>
+                </div>
+                <div class="megamenu-content">
+                    <div class="card-grid">
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=300&q=80"
+                                alt="Libros"><span>Publicaciones</span></div>
+                        <div class="img-card"><img
+                                src="https://images.unsplash.com/photo-1478720568477-152d9b164e63?auto=format&fit=crop&w=300&q=80"
+                                alt="Video"><span>Video</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Catálogo de productos y servicios</h2>
-                <p>Cultivando la tierra, sembrando futuro</p>
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-track">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+                <img src="https://media.istockphoto.com/id/1359638340/es/foto/grandes-valles-con-cafetales.jpg?s=612x612&w=0&k=20&c=rr3A7lX9qv7oRJVbPiFUTm8ILsNUArZN8lS52ne293g="
+                    alt="Campo Boyacense">
+                <div class="carousel-caption">
+                    <h2>Cultivando Tradiciones</h2>
+                    <p>Sembrando futuro en el campo colombiano</p>
+                </div>
             </div>
-        </section>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80"
+                    alt="Agricultura Sostenible">
+                <div class="carousel-caption">
+                    <h2>Agricultura Sostenible</h2>
+                    <p>Armonía entre producción y conservación</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1920&q=80"
+                    alt="Comunidad Campesina">
+                <div class="carousel-caption">
+                    <h2>Comunidad Unida</h2>
+                    <p>Fortaleciendo el tejido social rural</p>
+                </div>
+            </div>
+        </div>
 
-    
+        <!-- Controls -->
+        <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+
+            <!-- Intro Section -->
+            <section class="info-section intro-grid">
+                <div class="intro-text">
+                    <h2 class="main-title">El Convite Campesino</h2>
+
+                    <div class="text-block">
+                        <h3>¿Qué es el Convite Campesino?</h3>
+                        <p>Es una organización juvenil y campesina que articula la agroecología, la pedagogía popular,
+                            el arte comunitario y la comunicación rural para promover la soberanía alimentaria, la
+                            justicia social y ambiental en el campo boyacense.</p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>¿Cuál es nuestra historia?</h3>
+                        <p>El Convite surgió en el contexto de la pandemia del COVID-19, a mediados del año 2020 como
+                            una respuesta colectiva frente a las restricciones y efectos del confinamiento. Campesinos,
+                            campesinas y el grupo estudiantil PUENTE de la Universidad Externado de Colombia comenzaron
+                            un circuito corto de comercialización desde la Finca Agroecológica Santa Juana hasta Tunja,
+                            propiciando la venta directa de alimentos agroecológicos.</p>
+                        <p>El Convite se formalizó legalmente como Asociación en octubre de 2022, con <span
+                                class="highlight">21 familias</span> y hoy somos <span class="highlight">50
+                                familias</span>. Nuestro portafolio de acciones incluye:</p>
+                    </div>
+
+                    <ul class="action-list">
+                        <li><i class="fas fa-bullhorn"></i> Circuito corto de comercialización agroecológica entre
+                            Arcabuco, Tunja, Bogotá y otros municipios cercanos.</li>
+                        <li><i class="fas fa-globe-americas"></i> Escuela Campesina Agroecológica como espacio de
+                            formación, investigación y defensa del territorio.</li>
+                        <li><i class="fas fa-hands-helping"></i> Mercados campesinos, convites, trueques, voluntariados
+                            y actividades comunitarias.</li>
+                        <li><i class="fas fa-landmark"></i> Participación en espacios de incidencia de política pública
+                            y redes agroalimentarias a nivel local, nacional e internacional.</li>
+                        <li><i class="fas fa-handshake"></i> Alianzas con universidades, instituciones educativas y de
+                            investigación, ONGs y cooperación internacional.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- Location Section -->
+            <section class="info-section location-grid">
+                <div class="location-text">
+                    <h3>¿Dónde estamos?</h3>
+                    <p>La sede está en la vereda Rupavita del municipio de Arcabuco, en el departamento de Boyacá,
+                        Colombia promoviendo acciones que buscan armonizar la producción agroecológica con la
+                        conservación en el Complejo de Páramos Iguaque-Merchán.</p>
+                </div>
+                <div class="location-map">
+                    <!-- Placeholder for Map -->
+                    <div class="map-placeholder">
+                        <img src="https://via.placeholder.com/600x400.png?text=Mapa+Boyaca" alt="Mapa de ubicación"
+                            class="feature-img">
+                        <div class="map-labels">
+                            <!-- Labels could be absolute positioned here later -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Who We Are Section -->
+            <section class="info-section team-section">
+                <h3>¿Quiénes somos?</h3>
+                <p>Somos campesinas, campesinos, jóvenes, adultos, investigadores y consumidores comprometidos con la
+                    agroecología, el cooperativismo y la defensa del territorio. Nuestra Junta Directiva está conformada
+                    mayoritariamente por jóvenes y mujeres.</p>
+
+                <div class="team-gallery">
+                    <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?auto=format&fit=crop&w=400&q=80"
+                        alt="Campesino en huerta">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80"
+                        alt="Joven campesina">
+                    <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&w=400&q=80"
+                        alt="Trabajo comunitario">
+                </div>
+            </section>
+
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 El Convite Campesino. Todos los derechos reservados.</p>
-            <p>@elconvitecampesino</p>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col">
+                    <h3 class="footer-brand">🌾 El Convite Campesino</h3>
+                    <p class="footer-desc">
+                        Cultivando tradiciones y sembrando futuro. Una iniciativa dedicada al fortalecimiento del campo
+                        colombiano.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Tienda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Vereda La Esperanza, Colombia</li>
+                        <li><i class="fas fa-phone"></i> +57 300 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@elconvite.com</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col">
+                    <h4>Boletín</h4>
+                    <p class="mb-1">Suscríbete para recibir noticias del campo.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 El Convite Campesino. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
